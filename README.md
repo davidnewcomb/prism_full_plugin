@@ -1,5 +1,5 @@
 # B2evolution PrismJS plugin
-B2evolution plugin that extends the current Prism. Makes available all computer languages and additional plugins Line Highlight and Copy.
+B2evolution plugin that extends the current Prism. Makes available all computer languages and additional plugins.
 
 ## Lanuages
 Contains all languages from http://prismjs.com/download.html
