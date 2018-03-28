@@ -213,10 +213,16 @@ class prism_full_plugin extends Plugin
 
 			// Detect number of start line:
 			$line = intval( preg_replace( '/.*line="?(-?[0-9]+)"?.*/i', '$1', html_entity_decode( $block[2] ) ) );
-			$line = $line != 1 ? ' data-start="'.$line.'"' : '';
 
-			// Put <pre> around <code> to render codeblock
-			$r = '<pre class="line-numbers"'.$line.'>'.$r.'</pre>';
+			// If no line specified then don't add line numbers
+			if ($line == 0) {
+				$r = '<pre>'. $r .'</pre>';
+			} else {
+				$line = $line != 1 ? ' data-start="'.$line.'"' : '';
+
+				// Put <pre> around <code> to render codeblock
+				$r = '<pre class="line-numbers"'.$line.'>'.$r.'</pre>';
+			}
 		}
 
 		return $r;
